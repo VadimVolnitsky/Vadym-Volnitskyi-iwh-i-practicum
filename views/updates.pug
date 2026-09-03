@@ -1,0 +1,74 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title= title
+    link(rel='stylesheet', href='/css/style.css')
+    style.
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+      .form-group {
+        margin: 1rem 0;
+      }
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+      }
+      input {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 1rem;
+        box-sizing: border-box;
+      }
+      button {
+        padding: 0.75rem 1.5rem;
+        background-color: #0085ff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+      }
+      button:hover {
+        background-color: #0062cc;
+      }
+      a {
+        display: inline-block;
+        margin-top: 1rem;
+        color: #0085ff;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+  body
+    .container
+      h1 Add New Contact
+      
+      form(method='POST', action='/update-cobj')
+        .form-group
+          label(for='firstname') First Name:
+          input#firstname(type='text', name='firstname', required)
+        
+        .form-group
+          label(for='lastname') Last Name:
+          input#lastname(type='text', name='lastname', required)
+        
+        .form-group
+          label(for='email') Email:
+          input#email(type='email', name='email', required)
+        
+        .form-group
+          label(for='phone') Phone:
+          input#phone(type='tel', name='phone')
+        
+        button(type='submit') Create Contact
+      
+      a(href='/') Return to the homepage
